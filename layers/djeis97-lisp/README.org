@@ -1,0 +1,31 @@
+#+title: Djeis97 Lisp layer
+
+This layer collects all of the packages I use for editing lisp code in
+common-lisp, clojure, or elisp (this may be extended to Racket or Scheme
+eventually).
+
+* Layers it uses
+** common-lisp-sly
+** emacs-lisp
+** clojure
+* Packages it configures
+** evil-cleverparens
+Adds the ~<~ and ~>~ bindings from evil-cleverparens to lisp-state
+** lispy
+Adds the knights moves from lispy to ~SPC k z~
+** adjust-parens
+Used in the paren-management mode to provide ~<C-TAB>~ and ~<C-S-TAB>~ for
+reindenting lisp code such that the parens are adjusted accordingly.
+** slime (optionally, currently disabled as layer depends on common-lisp-sly)
+Enables slime-highlight-edits, sets lisp-implementations from config
+** sly
+Sets lisp-implementations from config
+* Minor modes/keybindings
+** paren-management
+| Key Binding | Description                                                      |
+|-------------+------------------------------------------------------------------|
+| ~<C-TAB>~   | Indent lisp line one level, rearranging parens accordingly       |
+| ~<C-S-TAB>~ | Dedent lisp line one level, rearranging parens accordingly       |
+| ~(~         | Insert open paren and slurp to infinity                          |
+| ~)~         | Barf to nearest close paren                                      |
+| ~RET~       | If a ")" follows the point, add an extra newline after the point |
