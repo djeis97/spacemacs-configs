@@ -1,30 +1,6 @@
 (require 'adjust-parens)
 (require 'smartparens)
 
-(defun fake-key (key)
-  (let ((command (key-binding (kbd "RET")))
-        (keys (function 'this-command-keys))
-        (vector-keys (function 'this-command-keys-vector))
-        (read-key-seq (function 'read-key-sequence))
-        (read-key-seq-vec (function 'read-key-sequence-vector))
-        (indirecting t))
-    (cl-flet ((this-command-keys ()
-                                 (if indirecting
-                                     [?\n]
-                                   (funcall keys)))
-              (this-command-keys-vector ()
-                                        (if indirecting
-                                            [?\n]
-                                          (funcall keys)))
-              (read-key-sequence ()
-                                 (setq indirecting nil)
-                                 (funcall read-key-seq))
-              (read-key-sequence-vector ()
-                                        (setq indirecting nil)
-                                        (funcall read-key-seq-vec)))
-      (setq this-command command)
-      (call-interactively command))))
-
 (defun close-paren ()
   (interactive)
   (let ((next-line-only-close-parens (save-excursion
