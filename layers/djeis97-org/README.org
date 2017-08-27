@@ -3,3 +3,6 @@
 * Layers it uses
 ** org
 ** pdf-tools
+* Packages it configures
+** org
+Adds org-indent-mode and auto-fill-mode to org-mode-hook.
