@@ -1,0 +1,6 @@
+#+TITLE: My Spacemacs Layers/Themes Collection
+
+This repository contains all of the custom layers and themes that I use in my
+various configs. The toplevel themes and layers directories are meant to be
+added to the proper spacemacs lists (I actually symlink them directly to my
+.spacemacs.d directory).
