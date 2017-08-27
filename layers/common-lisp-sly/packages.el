@@ -28,7 +28,9 @@
     (evil-set-initial-state 'sly-mrepl-mode 'insert)
     :config
     (evilified-state-evilify-map sly-inspector-mode-map
-      :mode sly-inspector-mode)
+      :mode sly-inspector-mode
+      :bindings
+      "gr" 'sly-inspector-reinspect)
     (evilified-state-evilify-map sly-db-mode-map
       :mode sly-db-mode)
     (setq sly-autodoc-use-multiline t
