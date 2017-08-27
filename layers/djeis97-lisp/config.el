@@ -1,1 +1,2 @@
-(defvar lisp-implementations '(("sbcl" "--dynamic-space-size" "6144")))
+(defvar lisp-implementations '((sbcl-large ("sbcl" "--dynamic-space-size" "6144"))
+                               (sbcl ("sbcl"))))
