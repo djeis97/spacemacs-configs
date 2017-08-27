@@ -127,7 +127,14 @@
 
 (defun common-lisp-sly/init-sly-macrostep ()
   (use-package sly-macrostep
-    :defer t))
+    :defer t
+    :config
+    (spacemacs/set-leader-keys-for-major-mode 'lisp-mode
+      "me" 'macrostep-expand)
+    ;; Steal the macrostep transient state from the emacs lisp layer, if possible...
+    (when (configuration-layer/layer-used-p 'emacs-lisp)
+      (spacemacs/set-leader-keys-for-major-mode 'lisp-mode
+        "ms" 'spacemacs/macrostep-transient-state/body))))
 
 (defun common-lisp-sly/pre-init-xterm-color ()
   (spacemacs|use-package-add-hook sly
