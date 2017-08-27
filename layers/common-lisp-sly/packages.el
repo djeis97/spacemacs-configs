@@ -3,8 +3,8 @@
     helm
     sly
     sly-macrostep
-    xterm-color
-    company))
+    sly-company
+    xterm-color))
 
 (defun common-lisp-sly/init-common-lisp-snippets ()
   (spacemacs|use-package-add-hook sly
@@ -134,7 +134,9 @@
     :post-config
     (add-hook 'sly-mrepl-mode-hook (lambda () (setq xterm-color-preserve-properties t)))))
 
-(defun common-lisp-sly/post-init-company ()
-  (spacemacs|add-company-backends
-    :backends (company-files company-capf)
-    :modes sly-mode))
+(defun common-lisp-sly/init-sly-company ()
+  (use-package sly-company
+    :config
+    (spacemacs|add-company-backends
+      :backends (company-files sly-company)
+      :mode sly-mode)))
