@@ -1,5 +1,6 @@
 
-(configuration-layer/declare-layer 'emacs-lisp)
-(configuration-layer/declare-layer 'common-lisp-sly)
-(configuration-layer/declare-layer '(clojure :variables
-                                             clojure-enable-fancify-symbols t))
+(configuration-layer/declare-layers
+ '(emacs-lisp
+   common-lisp-sly
+   (clojure :variables
+            clojure-enable-fancify-symbols t)))
