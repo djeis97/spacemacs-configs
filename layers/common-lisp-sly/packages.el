@@ -122,8 +122,8 @@
     :after sly
     :bind
     (:map sly-mrepl-mode-map
-          ("<up>" . sly-mrepl-previous-input-or-button)
-          ("<down>" . sly-mrepl-next-input-or-button))))
+          ("<C-up>" . sly-mrepl-previous-input-or-button)
+          ("<C-down>" . sly-mrepl-next-input-or-button))))
 
 (defun common-lisp-sly/init-sly-macrostep ()
   (use-package sly-macrostep
