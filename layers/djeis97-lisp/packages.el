@@ -32,7 +32,8 @@
 (defconst djeis97-lisp-packages
   '(evil-cleverparens
     lispy
-    (paren-management :location local)
+    (adjust-parens :location local
+                   :requires smartparens)
     slime
     sly)
   "The list of Lisp packages required by the djeis97-lisp layer.
@@ -100,11 +101,11 @@ Each entry is either:
       (define-lisp-state-keys '(("x" . lispy-x)
                                 ("z" . lh-knight/body))))))
 
-(defun djeis97-lisp/init-paren-management ()
-  (use-package paren-management
+(defun djeis97-lisp/init-adjust-parens ()
+  (use-package adjust-parens
     :defer t
-    :commands (paren-management))
-  (spacemacs/add-to-hooks 'paren-management '(lisp-mode-hook emacs-lisp-mode-hook)))
+    :commands (lisp-indent-adjust-parens
+               lisp-dedent-adjust-parens)))
 
 (defun djeis97-lisp/post-init-slime ()
   (setq-default slime-lisp-implementations lisp-implementations)
