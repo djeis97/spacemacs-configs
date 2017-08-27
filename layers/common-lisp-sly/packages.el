@@ -26,9 +26,11 @@
     (spacemacs/register-repl 'sly 'sly)
     (sp-local-pair '(sly-mrepl-mode) "'" "'" :actions nil)
     (evil-set-initial-state 'sly-mrepl-mode 'insert)
-    (evil-set-initial-state 'sly-inspector-mode 'motion)
-    (evil-set-initial-state 'sly-db-mode 'motion)
     :config
+    (evilified-state-evilify-map sly-inspector-mode-map
+      :mode sly-inspector-mode)
+    (evilified-state-evilify-map sly-db-mode-map
+      :mode sly-db-mode)
     (setq sly-autodoc-use-multiline t
           sly-complete-symbol*-fancy t
           sly-kill-without-query-p t
