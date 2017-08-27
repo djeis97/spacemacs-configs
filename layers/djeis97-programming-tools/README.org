@@ -1,0 +1,10 @@
+#+TITLE: djeis97 Programming Tools Layer
+
+This layer pulls in any language-agnostic programming tools I expect to be
+availible everywhere. As these tend to be low-maintainance, this layer mostly
+serves as a meta-layer.
+
+* Layers it uses
+** auto-completion
+** syntax-checking
+** spell-checking

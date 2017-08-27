@@ -1,0 +1,31 @@
+#+TITLE: Djeis97 Personal Emacs Configuration Layer
+
+This layer pulls in emacs layers and full emacs applications that I expect to be
+availible on all of my machines, along with any custom configurations for those
+layers or emacs builtin packages
+
+* Layers it uses
+** finance
+I have begun using ledger to manage my finances, and since my ledger files are
+syncronized between all of my machines I expect to be able to edit them everywhere.
+** ibuffer
+** themes-megapack
+** git
+** ivy
+** shell
+** djeis97-programming-tools
+** djeis97-lisp
+** djeis97-org
+** pdf-tools
+* Packages it configures
+** dired
+Turn on dired-omit-files for dotfiles and emacs's temporary files
+** tramp 
+Include the remote-host's actual path in tramp remote sessions
+** anchored-transpose
+Simple library for swapping two regions
+** sp-hungry-delete
+My custom library for a smartparens safe hungry-delete. Adds this to the
+smartparens hook.
+* Other Configuration
+Sets up advice on switch-to-buffer and select-window to save the buffer left.

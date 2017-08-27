@@ -1,0 +1,21 @@
+#+TITLE: Home specific configuration layer
+
+This layer includes layers with specific configuration settings for my home
+laptop, not all of which are in configuration layers.
+
+* Layers used
+** exwm
+** floobits
+Requires .floorc
+** gnus
+specific configuration set in .gnus and gpg
+
+* Other configuration
+The Emacs EasyPG password input mode is set to loopback, which requres this in
+the .gnupg/gpg-agent.conf
+#+BEGIN_EXAMPLE
+allow_emacs_pinentry
+allow_loopback_pinentry
+#+END_EXAMPLE
+
+This is to ensure pinentry does not pop up a dialog when running exwm...
