@@ -146,6 +146,7 @@
 (defun common-lisp-sly/init-sly-company ()
   (use-package sly-company
     :config
+    (add-hook 'sly-mode-hook 'sly-company-mode)
     (spacemacs|add-company-backends
       :backends (company-files sly-company)
-      :mode sly-mode)))
+      :modes sly-mode)))
