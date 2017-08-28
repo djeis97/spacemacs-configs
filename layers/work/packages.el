@@ -66,7 +66,7 @@ Each entry is either:
         '(0 "DisplayPort-2" 1 "DisplayPort-1" 2 "DisplayPort-0" 3 "DisplayPort-2" 4 "DisplayPort-1" 5 "DisplayPort-0"))
   (exwm-randr-enable))
 
-(defun personal-layer/post-init-python ()
+(defun work/post-init-python ()
   (use-package python
     :defer t
     :mode ("\\.pyt\\'" . python-mode))
