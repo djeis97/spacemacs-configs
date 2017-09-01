@@ -88,7 +88,6 @@
 
       ;; macro
       "ma" 'sly-macroexpand-all
-      "me" 'macrostep-expand
       "mo" 'sly-macroexpand-1
 
       ;; repl
@@ -129,7 +128,7 @@
 
 (defun common-lisp-sly/init-sly-macrostep ()
   (use-package sly-macrostep
-    :defer t
+    :after sly
     :config
     (spacemacs/set-leader-keys-for-major-mode 'lisp-mode
       "me" 'macrostep-expand)
