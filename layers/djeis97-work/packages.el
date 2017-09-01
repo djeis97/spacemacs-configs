@@ -60,9 +60,9 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun djeis97-work/post-init-exwm ()
-  (setq exwm-djeis97-workspace-number 6)
+  (setq exwm-workspace-number 6)
   (require 'exwm-randr)
-  (setq exwm-randr-djeis97-workspace-output-plist
+  (setq exwm-randr-workspace-output-plist
         '(0 "DisplayPort-2" 1 "DisplayPort-1" 2 "DisplayPort-0" 3 "DisplayPort-2" 4 "DisplayPort-1" 5 "DisplayPort-0"))
   (exwm-randr-enable))
 
