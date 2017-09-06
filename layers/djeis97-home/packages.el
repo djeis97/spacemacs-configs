@@ -32,7 +32,8 @@
 (defconst djeis97-home-packages
   '(exwm
     (xwidgete :location local)
-    (epa :location built-in))
+    (epa :location built-in)
+    dired-du)
   "The list of Lisp packages required by the work layer.
 
 Each entry is either:
@@ -76,5 +77,9 @@ Each entry is either:
   (use-package epa
     :config
     (setq epa-pinentry-mode 'loopback)))
+
+(defun djeis97-home/init-dired-du ()
+  (use-package dired-du
+    :defer t))
 
 ;;; packages.el ends here
