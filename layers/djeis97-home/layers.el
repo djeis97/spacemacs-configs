@@ -2,4 +2,5 @@
 (configuration-layer/declare-layers
  '(exwm
    gnus
-   floobits))
+   floobits
+   pandoc))
