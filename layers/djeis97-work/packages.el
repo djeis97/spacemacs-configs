@@ -63,7 +63,7 @@ Each entry is either:
   (setq exwm-workspace-number 6)
   (require 'exwm-randr)
   (setq exwm-randr-workspace-output-plist
-        '(0 "DisplayPort-2" 1 "DisplayPort-1" 2 "DisplayPort-0" 3 "DisplayPort-2" 4 "DisplayPort-1" 5 "DisplayPort-0"))
+        '(0 "LVDS" 1 "DisplayPort-2" 2 "DisplayPort-1" 3 "LVDS" 4 "DisplayPort-2" 5 "DisplayPort-1"))
   (exwm-randr-enable))
 
 (defun djeis97-work/post-init-python ()
