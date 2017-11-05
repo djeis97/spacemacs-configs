@@ -70,7 +70,8 @@ Each entry is either:
     (setq exwm-workspace-number 1)
     (require 'exwm-randr)
     (setq exwm-randr-workspace-output-plist '(0 "LVDS" 1 "DFP1"))
-    (exwm-randr-enable)))
+    (exwm-randr-enable)
+    (add-hook 'exwm-init-hook (lambda () (start-process "Dropbox" "*Dropbox*" "dropbox")))))
 
 (defun djeis97-home/init-xwidgete ()
   (use-package xwidgete
