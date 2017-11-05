@@ -104,7 +104,8 @@ Each entry is either:
 (defun djeis97-lisp/init-adjust-parens ()
   (use-package adjust-parens
     :defer t
-    :commands (lisp-indent-adjust-parens
+    :commands (adjust-parens-mode
+               lisp-indent-adjust-parens
                lisp-dedent-adjust-parens)))
 
 (defun djeis97-lisp/post-init-slime ()
