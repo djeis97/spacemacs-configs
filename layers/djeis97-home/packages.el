@@ -34,7 +34,8 @@
     (xwidgete :location local)
     (dired-sync :location local)
     (epa :location built-in)
-    dired-du)
+    dired-du
+    dired+)
   "The list of Lisp packages required by the work layer.
 
 Each entry is either:
@@ -88,4 +89,11 @@ Each entry is either:
   (use-package dired-sync
     :defer t
     :commands 'dired-do-sync))
+
+(defun djeis97-home/init-dired+ ()
+  (use-package dired+
+    :defer t)
+  (with-eval-after-load 'dired
+    (require 'dired+)))
+
 ;;; packages.el ends here
