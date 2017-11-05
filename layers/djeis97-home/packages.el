@@ -62,12 +62,13 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun djeis97-home/post-init-exwm ()
+(defun djeis97-home/pre-init-exwm ()
   (spacemacs|use-package-add-hook exwm
     :post-config
-    (setq exwm-workspace-number 3)
+    (setq exwm-systemtray-height 11)
+    (setq exwm-workspace-number 1)
     (require 'exwm-randr)
-    (setq exwm-randr-workspace-output-plist '(0 "LVDS" 1 "LVDS" 2 "LVDS" 3 "DFP1" 4 "DFP1"))
+    (setq exwm-randr-workspace-output-plist '(0 "LVDS" 1 "DFP1"))
     (exwm-randr-enable)))
 
 (defun djeis97-home/init-xwidgete ()
