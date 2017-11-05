@@ -4,7 +4,8 @@
     sly
     sly-macrostep
     sly-company
-    xterm-color))
+    xterm-color
+    parinfer))
 
 (defun common-lisp-sly/init-common-lisp-snippets ()
   (spacemacs|use-package-add-hook sly
@@ -149,3 +150,6 @@
     (spacemacs|add-company-backends
       :backends (company-files sly-company)
       :modes sly-mode)))
+
+(defun common-lisp-sly/post-init-parinfer ()
+  (add-hook 'lisp-mode-hook 'parinfer-mode))
