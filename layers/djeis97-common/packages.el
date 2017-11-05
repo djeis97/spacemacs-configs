@@ -32,8 +32,6 @@
 (defconst djeis97-common-packages
   '((sp-hungry-delete :location local)
     (anchored-transpose :location local)
-    (dired :location built-in)
-    (tramp :location built-in)
     (term :location built-in))
   "The list of Lisp packages required by the djeis97-common layer.
 
@@ -66,15 +64,6 @@ Each entry is either:
   (use-package anchored-transpose
     :demand t))
 
-(defun djeis97-common/post-init-dired ()
-  (spacemacs|use-package-add-hook dired
-    :post-config
-    (setq dired-omit-files "^\\.[^.]\\|^#.*#$")))
-
-(defun djeis97-common/post-init-tramp ()
-  (with-eval-after-load 'tramp
-    (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
-    (setq tramp-use-ssh-controlmaster-options nil)))
 
 (defun djeis97-common/init-sp-hungry-delete ()
   (use-package sp-hungry-delete
