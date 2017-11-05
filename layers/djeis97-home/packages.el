@@ -32,6 +32,7 @@
 (defconst djeis97-home-packages
   '(exwm
     (xwidgete :location local)
+    (dired-sync :location local)
     (epa :location built-in)
     dired-du)
   "The list of Lisp packages required by the work layer.
@@ -82,4 +83,8 @@ Each entry is either:
   (use-package dired-du
     :defer t))
 
+(defun djeis97-home/init-dired-sync ()
+  (use-package dired-sync
+    :defer t
+    :commands 'dired-do-sync))
 ;;; packages.el ends here
