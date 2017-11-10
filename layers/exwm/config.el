@@ -17,6 +17,6 @@
                    (lambda ()
                      (setq exwm-input-line-mode-passthrough nil)
                      (when on-exit (funcall on-exit))))))
-    (apply orig-fun keymap on-exit foreign-keys)))
+    (funcall orig-fun keymap on-exit foreign-keys)))
 
 (advice-add 'hydra-set-transient-map :around #'exwm-passthrough)
