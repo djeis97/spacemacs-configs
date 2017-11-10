@@ -3,7 +3,7 @@
  '(finance
    git
    ibuffer
-   helm
+   ivy
    themes-megapack
    (shell :variables
           shell-default-shell 'eshell
