@@ -93,6 +93,10 @@
               (lambda ()
                 (when (string= "Google-chrome" exwm-class-name)
                   (exwm-workspace-rename-buffer exwm-title))))
+    (add-hook 'exwm-update-title-hook
+              (lambda ()
+                (when (string= "Vivaldi-stable" exwm-class-name)
+                  (exwm-workspace-rename-buffer exwm-title))))
 
     (defvar exwm-workspace-switch-wrap t
       "Whether `spacemacs/exwm-workspace-next' and `spacemacs/exwm-workspace-prev' should wrap.")
