@@ -35,3 +35,8 @@
 (with-eval-after-load 'tramp
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
   (setq tramp-use-ssh-controlmaster-options nil))
+
+
+(setq-default
+ browse-url-generic-program "uzbl-browser"
+ browse-url-browser-function 'browse-url-generic)

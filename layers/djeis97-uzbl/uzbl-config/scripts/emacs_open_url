@@ -1,0 +1,11 @@
+#!/bin/bash
+
+. "$UZBL_UTIL_DIR/uzbl-dir.sh"
+
+[ -r "$UZBL_HISTORY_FILE" ] || exit 1
+
+if [ "$1" ]; then
+    emacsclient --eval "(djeis97-uzbl/uzbl-open-url \"$UZBL_FIFO\" \"$UZBL_HISTORY_FILE\" \"$UZBL_URI\")"
+else
+    emacsclient --eval "(djeis97-uzbl/uzbl-open-url \"$UZBL_FIFO\" \"$UZBL_HISTORY_FILE\")"
+fi
