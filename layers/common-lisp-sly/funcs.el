@@ -1,6 +1,6 @@
 (defun spacemacs//sly-helm-source (&optional table)
   (or table (setq table sly-lisp-implementations))
-  `((name . "Slime")
+  `((name . "Sly")
     (candidates . ,(mapcar #'car table))
     (action . (lambda (candidate)
                 (car (helm-marked-candidates))))))
