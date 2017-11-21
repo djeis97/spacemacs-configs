@@ -1,9 +1,9 @@
 (defconst common-lisp-sly-packages
-  '((common-lisp-snippets :toggle (configuration-layer/package-usedp 'yasnippet))
+  '((common-lisp-snippets :requires yasnippet)
     helm
     sly
-    sly-macrostep
-    sly-company
+    (sly-macrostep :requires (sly macrostep))
+    (sly-company :requires (sly company))
     xterm-color
     parinfer))
 
