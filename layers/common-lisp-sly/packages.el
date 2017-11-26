@@ -26,6 +26,7 @@
     :init
     (spacemacs/register-repl 'sly 'sly)
     (sp-local-pair '(sly-mrepl-mode) "'" "'" :actions nil)
+    (sp-local-pair '(sly-mrepl-mode) "`" "`" :actions nil)
     (evil-set-initial-state 'sly-mrepl-mode 'insert)
     :config
     (evilified-state-evilify-map sly-inspector-mode-map
