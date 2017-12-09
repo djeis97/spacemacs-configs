@@ -81,6 +81,8 @@ Each entry is either:
     :defer t
     :commands (evil-cp-<
                evil-cp->)
+    :init
+    (add-hook 'smartparens-enabled-hook 'evil-cleverparens-mode)
     :config
     (setq evil-cleverparens-use-additional-bindings nil)
     (setq evil-cleverparens-use-additional-movement-keys nil))
@@ -88,8 +90,7 @@ Each entry is either:
     :post-config
     (progn
       (define-lisp-state-keys '(("<" . evil-cp-<)
-                                (">" . evil-cp->)))))
-  (add-hook 'smartparens-enabled-hook 'evil-cleverparens-mode))
+                                (">" . evil-cp->))))))
 
 (defun djeis97-lisp/init-lispy ()
   (use-package lispy
