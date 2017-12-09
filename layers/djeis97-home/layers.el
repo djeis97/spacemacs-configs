@@ -3,4 +3,5 @@
  '(exwm
    gnus
    floobits
-   pandoc))
+   pandoc
+   gtags))
