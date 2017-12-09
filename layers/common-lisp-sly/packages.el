@@ -28,6 +28,7 @@
     (sp-local-pair '(sly-mrepl-mode) "'" "'" :actions nil)
     (sp-local-pair '(sly-mrepl-mode) "`" "`" :actions nil)
     (evil-set-initial-state 'sly-mrepl-mode 'insert)
+    (evil-set-initial-state 'sly-stickers--replay-mode 'emacs)
     :config
     (evilified-state-evilify-map sly-inspector-mode-map
       :mode sly-inspector-mode
@@ -108,7 +109,7 @@
       "Sn" 'sly-stickers-next-sticker
       "Sp" 'sly-stickers-prev-sticker
       "Sr" 'sly-stickers-replay
-      "Sr" 'sly-stickers-clear-region-stickers
+      "SR" 'sly-stickers-clear-region-stickers
       "Ss" 'sly-stickers-dwim)
 
     (mapc (lambda (x)
