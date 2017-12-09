@@ -20,5 +20,4 @@
                                             (indent-according-to-mode)))
               map)))
 
-;; (spacemacs/add-to-hooks 'paren-management '(lisp-mode-hook emacs-lisp-mode-hook))
-(add-hook 'lisp-mode-hook 'adjust-parens-mode)
+(spacemacs/add-to-hooks 'adjust-parens-mode '(lisp-mode-hook emacs-lisp-mode-hook clips-mode-hook))
