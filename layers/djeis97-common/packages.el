@@ -32,7 +32,8 @@
 (defconst djeis97-common-packages
   '((sp-hungry-delete :location local)
     (anchored-transpose :location local)
-    (term :location built-in))
+    (term :location built-in)
+    (epa :location built-in))
   "The list of Lisp packages required by the djeis97-common layer.
 
 Each entry is either:
@@ -78,5 +79,13 @@ Each entry is either:
           [term term-color-black term-color-red term-color-green
                 term-color-yellow term-color-blue term-color-magenta
                 term-color-cyan term-color-white])))
+
+
+(defun djeis97-common/init-epa ()
+  (use-package epa
+    :config
+    (setq epa-pinentry-mode 'loopback)
+    (pinentry-start t)))
+
 
 ;;; packages.el ends here
