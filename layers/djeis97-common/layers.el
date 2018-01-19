@@ -11,5 +11,6 @@
    djeis97-lisp
    djeis97-programming-tools
    djeis97-org
+   djeis97-git
    djeis97-uzbl
    pdf-tools))
