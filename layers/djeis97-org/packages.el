@@ -60,7 +60,7 @@ Each entry is either:
 
 (defun djeis97-org/post-init-org ()
   (spacemacs/add-all-to-hook 'org-mode-hook 'org-indent-mode 'auto-fill-mode)
-  (with-eval-after-load 'org
+  (with-eval-after-load 'ox-latex
     (add-to-list 'org-latex-classes
                  '("acmart-sigconf" "\\documentclass[sigconf]{acmart}"
                    ("\\section{%s}" . "\\section*{%s}")
