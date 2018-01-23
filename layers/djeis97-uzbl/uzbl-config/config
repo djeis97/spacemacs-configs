@@ -253,6 +253,10 @@ set ebind     = @mode_bind global,-insert
 @cbind  <Space>      = scroll vertical end
 @cbind  G<Go To:>_   = scroll vertical %r!
 @cbind  _G<Go To:>_  = scroll horizontal %r!
+@cbind  gg           = scroll vertical begin
+@cbind  <Ctrl>d      = scroll vertical 400
+@cbind  <Ctrl>u      = scroll vertical -400
+
 
 # Navigation binds
 @cbind  H   = back
@@ -280,12 +284,6 @@ set ebind     = @mode_bind global,-insert
 
 # Print pages to a printer
 @cbind  <Ctrl>p = hardcopy
-
-# Web searching binds
-@cbind  gg<Google:>_         = uri http://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
-@cbind  ddg<DuckDuckGo:>_    = uri http://duckduckgo.com/?q=%s
-@cbind  \\awiki<Archwiki:>_  = uri http://wiki.archlinux.org/index.php/Special:Search?search=\@<encodeURIComponent(%r)>\@&go=Go
-@cbind  \\wiki<Wikipedia:>_  = uri http://en.wikipedia.org/w/index.php?title=Special:Search&search=\@<encodeURIComponent(%r)>\@&go=Go
 
 # Handy binds
 # Set function shortcut
@@ -347,10 +345,6 @@ set ebind     = @mode_bind global,-insert
 # Bookmark/history loading
 @cbind  U  = spawn @scripts_dir/load_url_from_history.sh
 @cbind  u  = spawn @scripts_dir/load_url_from_bookmarks.sh
-
-# Temporary bookmarks
-@cbind  <Ctrl>d  = spawn @scripts_dir/insert_temp.sh
-@cbind  D        = spawn @scripts_dir/load_url_from_temps.sh
 
 # Link following (similar to vimperator and konqueror)
 # Set custom keys you wish to use for navigation. Some common examples:

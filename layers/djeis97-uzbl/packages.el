@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst djeis97-uzbl-packages
-  '()
+  '(engine-mode)
   "The list of Lisp packages required by the djeis97-uzbl layer.
 
 Each entry is either:
@@ -57,6 +57,12 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun djeis97-uzbl/post-init-engine-mode ()
+  (push '(awiki
+          :name "Arch Wiki"
+          :url "http://wiki.archlinux.org/index.php/Special:Search?search=%s&go=Go")
+        search-engine-alist))
 
 
 ;;; packages.el ends here
