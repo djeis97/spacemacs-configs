@@ -18,8 +18,7 @@
                               :repo "ch11ng/xelb")
             :step pre)
       (exwm :location (recipe :fetcher github
-                              :repo "ch11ng/exwm")
-            :step pre)))
+                              :repo "ch11ng/exwm"))))
 
 (defun exwm/init-cl-generic ()
   (use-package cl-generic
@@ -202,7 +201,6 @@ Can show completions at point for COMMAND using helm or ido"
     ;; Universal Get-me-outta-here
     (push ?\C-g exwm-input-prefix-keys)
     ;; Universal Arguments
-    (push ?\C-u exwm-input-prefix-keys)
     (push ?\C-0 exwm-input-prefix-keys)
     (push ?\C-1 exwm-input-prefix-keys)
     (push ?\C-2 exwm-input-prefix-keys)
