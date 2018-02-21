@@ -1,7 +1,8 @@
 
 (defconst djeis97-git-packages
   '(magit
-    (magithub :requires (magit))))
+    (magithub :requires (magit))
+    (magit-gh-pulls :excluded t)))
 
 (defun djeis97-git/pre-init-magit ()
   (spacemacs|use-package-add-hook magit

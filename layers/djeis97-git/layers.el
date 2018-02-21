@@ -1,2 +1,2 @@
 (configuration-layer/declare-layers
- '(git))
+ '(git github))
