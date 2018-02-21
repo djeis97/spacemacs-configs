@@ -1,0 +1,2 @@
+
+(defvar spacemacs-jiralib-url "")

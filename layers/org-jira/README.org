@@ -1,0 +1,28 @@
+#+TITLE: org-jira layer
+
+* Table of Contents                                       :TOC_4_gh:noexport:
+- [[#description][Description]]
+  - [[#features][Features:]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+This layer adds support for something.
+
+** Features:
+  - Autocomplete
+  - Lint
+  - Refactor
+  - ...
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =org-jira= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+* Key bindings
+
+| Key Binding | Description    |
+|-------------+----------------|
+| ~SPC x x x~ | Does thing01   |
+
