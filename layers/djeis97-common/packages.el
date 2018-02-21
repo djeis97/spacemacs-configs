@@ -70,8 +70,8 @@ Each entry is either:
 (defun djeis97-common/init-sp-hungry-delete ()
   (use-package sp-hungry-delete
     :config
-    (with-eval-after-load 'smartparens))
-      (spacemacs/add-to-hooks 'sp-hungry-delete-mode '(smartparens-enabled-hook)))
+    (with-eval-after-load 'smartparens
+      (spacemacs/add-to-hooks 'sp-hungry-delete-mode '(smartparens-enabled-hook)))))
 
 
 (defun djeis97-common/post-init-term ()
