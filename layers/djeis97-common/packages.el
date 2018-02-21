@@ -33,7 +33,8 @@
   '((sp-hungry-delete :location local)
     (anchored-transpose :location local)
     (term :location built-in)
-    (epa :location built-in))
+    (epa :location built-in)
+    ivy)
   "The list of Lisp packages required by the djeis97-common layer.
 
 Each entry is either:
@@ -86,6 +87,12 @@ Each entry is either:
     :config
     (setq epa-pinentry-mode 'loopback)
     (pinentry-start t)))
+
+(defun djeis97-common/pre-init-ivy ()
+  (spacemacs|use-package-add-hook ivy
+    :post-init
+    (spacemacs/set-leader-keys
+      "aa" 'counsel-linux-app)))
 
 
 ;;; packages.el ends here
