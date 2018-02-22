@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst org-jira-packages
-  '(org-jira org)
+  '(org-jira)
   "The list of Lisp packages required by the org-jira layer.
 
 Each entry is either:
