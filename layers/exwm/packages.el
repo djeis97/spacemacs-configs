@@ -32,7 +32,7 @@
     :init
     ;; Disable dialog boxes since they are unusable in EXWM
     (setq use-dialog-box nil)
-    ;; 10 Worskpaces please
+    ;; Worskpaces please
     (setq exwm-workspace-number 6)
     ;; You may want Emacs to show you the time
     (display-time-mode t)
