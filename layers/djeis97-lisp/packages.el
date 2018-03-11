@@ -76,14 +76,9 @@ Each entry is either:
           (cmd (cdr k)))
       (eval `(define-lisp-state-key ,key ,cmd)))))
 
-(defun djeis97-lisp/init-evil-cleverparens ()
-  (use-package evil-cleverparens
-    :defer t
-    :commands (evil-cp-<
-               evil-cp->)
-    :init
-    (add-hook 'smartparens-enabled-hook 'evil-cleverparens-mode)
-    :config
+(defun djeis97-lisp/pre-init-evil-cleverparens ()
+  (spacemacs|use-package-add-hook evil-cleverparens
+    :post-config
     (setq evil-cleverparens-use-additional-bindings nil)
     (setq evil-cleverparens-use-additional-movement-keys nil))
   (spacemacs|use-package-add-hook evil-lisp-state
