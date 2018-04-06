@@ -33,6 +33,7 @@
   '(exwm
     (xwidgete :location local)
     (dired-sync :location local)
+    (epa :location built-in)
     dired-du
     dired+)
   "The list of Lisp packages required by the work layer.
@@ -90,5 +91,11 @@ Each entry is either:
     :defer t)
   (with-eval-after-load 'dired
     (require 'dired+)))
+
+(defun djeis97-home/init-epa ()
+  (use-package epa
+    :config
+    (setq epa-pinentry-mode 'loopback)
+    (pinentry-start t)))
 
 ;;; packages.el ends here

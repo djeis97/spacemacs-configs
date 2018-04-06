@@ -33,7 +33,6 @@
   '((sp-hungry-delete :location local)
     (anchored-transpose :location local)
     (term :location built-in)
-    (epa :location built-in)
     ivy)
   "The list of Lisp packages required by the djeis97-common layer.
 
@@ -81,12 +80,6 @@ Each entry is either:
                 term-color-yellow term-color-blue term-color-magenta
                 term-color-cyan term-color-white])))
 
-
-(defun djeis97-common/init-epa ()
-  (use-package epa
-    :config
-    (setq epa-pinentry-mode 'loopback)
-    (pinentry-start t)))
 
 (defun djeis97-common/pre-init-ivy ()
   (spacemacs|use-package-add-hook ivy
