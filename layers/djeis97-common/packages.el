@@ -33,7 +33,8 @@
   '((sp-hungry-delete :location local)
     (anchored-transpose :location local)
     (term :location built-in)
-    ivy)
+    ivy
+    engine-mode)
   "The list of Lisp packages required by the djeis97-common layer.
 
 Each entry is either:
@@ -87,5 +88,9 @@ Each entry is either:
     (spacemacs/set-leader-keys
       "aa" 'counsel-linux-app)))
 
+(defun djeis97-common/pre-init-engine-mode ()
+  (spacemacs|use-package-add-hook engine-mode
+    :post-init
+    (push '(vlasisku :name "Vlasisku" :url "http://vlasisku.lojban.org/vlasisku/%s") search-engine-alist)))
 
 ;;; packages.el ends here
