@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst djeis97-org-packages
-  '((org :location built-in))
+  '((org :location built-in)
+    org-caldav
+    oauth2)
   "The list of Lisp packages required by the djeis97-org layer.
 
 Each entry is either:
@@ -60,6 +62,13 @@ Each entry is either:
 
 (defun djeis97-org/post-init-org ()
   (spacemacs/add-all-to-hook 'org-mode-hook 'org-indent-mode 'auto-fill-mode)
+  (with-eval-after-load 'org-agenda
+    (setq org-agenda-files '("~/org/")
+
+          org-refile-use-outline-path 'file
+          org-refile-targets '((nil :maxlevel . 3)
+                               (org-agenda-files :maxlevel . 2))))
+
   (with-eval-after-load 'ox-latex
     (add-to-list 'org-latex-classes
                  '("acmart-sigconf" "\\documentclass[sigconf]{acmart}"
@@ -76,5 +85,25 @@ Each entry is either:
                    ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                    ("\\paragraph{%s}" . "\\paragraph*{%s}")
                    ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))))
+
+(defun djeis97-org/init-org-caldav ()
+  (use-package org-caldav
+    :after org
+    :config
+    (setq
+     org-caldav-oauth2-client-id "291194314842-e5dpa8pl2267noslbg56t44tehc58c62.apps.googleusercontent.com"
+     org-caldav-oauth2-client-secret (with-temp-buffer
+                                       (insert-file-contents-literally "~/org/CalSecret")
+                                       (car (split-string (buffer-string) "\n" t)))
+     org-caldav-url 'google
+     org-caldav-calendars '((:calendar-id "qwe12345678910@gmail.com"
+                                          :files ("~/org/cal.org"
+                                                  "~/org/fromcaldav.org")
+                                          :inbox "~/org/cal.org"))
+     org-caldav-save-directory "~/org/caldavState/")))
+
+(defun djeis97-org/init-oauth2 ()
+  (use-package oauth2
+    :demand t))
 
 ;;; packages.el ends here
