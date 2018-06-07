@@ -10,6 +10,7 @@
 (defvar exwm--hide-tiling-modeline nil
   "Whether to hide modeline.")
 
+(defvar exwm-workspace-minibuffer-position 'bottom)
 
 (defun exwm-passthrough (orig-fun keymap on-exit &optional foreign-keys)
   (setq exwm-input-line-mode-passthrough t)
