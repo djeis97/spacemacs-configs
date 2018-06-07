@@ -12,6 +12,8 @@
 
 (defvar exwm-workspace-minibuffer-position 'bottom)
 
+(defvar exwm-focus-follows-mouse t)
+
 (defun exwm-passthrough (orig-fun keymap on-exit &optional foreign-keys)
   (setq exwm-input-line-mode-passthrough t)
   (let ((on-exit (lexical-let ((on-exit on-exit))

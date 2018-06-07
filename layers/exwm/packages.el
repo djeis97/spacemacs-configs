@@ -30,6 +30,9 @@
 (defun exwm/init-exwm ()
   (use-package exwm
     :init
+    (when exwm-focus-follows-mouse
+      (setq mouse-autoselect-window t
+            focus-follows-mouse t))
     ;; Disable dialog boxes since they are unusable in EXWM
     (setq use-dialog-box nil)
     ;; Worskpaces please
