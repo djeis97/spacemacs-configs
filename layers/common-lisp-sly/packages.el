@@ -131,16 +131,16 @@
 
 [_q_] Exit
 "
-  :foreign-keys run
-  :bindings
-  ("g" sly-edit-definition)
-  ("G" sly-edit-definition-other-window)
-  ("b" sly-pop-find-definition-stack)
-  ("n" sly-next-note)
-  ("N" sly-previous-note)
-  ("s" sly-stickers-next-sticker)
-  ("S" sly-stickers-prev-sticker)
-  ("q" nil :exit t)))
+      :foreign-keys run
+      :bindings
+      ("g" sly-edit-definition)
+      ("G" sly-edit-definition-other-window)
+      ("b" sly-pop-find-definition-stack)
+      ("n" sly-next-note)
+      ("N" sly-previous-note)
+      ("s" sly-stickers-next-sticker)
+      ("S" sly-stickers-prev-sticker)
+      ("q" nil :exit t)))
 
   (use-package sly-mrepl
     :after sly
