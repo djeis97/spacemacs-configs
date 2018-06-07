@@ -238,7 +238,7 @@ Can show completions at point for COMMAND using helm or ido"
 
     (require 'exwm-systemtray)
     (exwm-systemtray-enable)
-    (setq exwm-workspace-show-all-buffers t)
+    (setq exwm-workspace-show-all-buffers nil)
     ;; The following example demonstrates how to use simulation keys to mimic the
     ;; behavior of Emacs. The argument to `exwm-input-set-simulation-keys' is a
     ;; list of cons cells (SRC . DEST), where SRC is the key sequence you press and
