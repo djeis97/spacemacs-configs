@@ -40,3 +40,5 @@
 (setq-default
  browse-url-generic-program "uzbl-browser"
  browse-url-browser-function 'browse-url-generic)
+
+(defvar evil-want-abbrev-expand-on-insert-exit nil)
