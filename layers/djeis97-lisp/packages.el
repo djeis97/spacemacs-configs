@@ -35,7 +35,9 @@
     (adjust-parens :location local
                    :requires smartparens)
     slime
-    sly)
+    sly
+    inf-clojure
+    parinfer)
   "The list of Lisp packages required by the djeis97-lisp layer.
 
 Each entry is either:
@@ -110,5 +112,18 @@ Each entry is either:
 
 (defun djeis97-lisp/post-init-sly ()
   (setq-default sly-lisp-implementations lisp-implementations))
+
+(defun djeis97-lisp/init-inf-clojure ()
+  (use-package inf-clojure
+    :defer t
+    :init
+    (add-hook 'clojure-mode-hook 'inf-clojure-minor-mode)
+    (defun arcadia-inf-clojure-eldoc-setup-wrapper (orig-fun &rest args))
+    ;; Temporary hack that disables eldoc for inf-clojure.
+    (advice-add 'inf-clojure-eldoc-setup :around #'arcadia-inf-clojure-eldoc-setup-wrapper)))
+
+(defun djeis97/post-init-parinfer ()
+  (add-hook 'clojure-mode-hook 'parinfer-mode)
+  (add-hook 'inf-clojure-mode-hook 'parinfer-mode))
 
 ;;; packages.el ends here
