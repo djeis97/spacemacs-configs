@@ -227,16 +227,6 @@ Can show completions at point for COMMAND using helm or ido"
     (exwm-input-set-key (kbd "S-s-U") #'winner-redo)
     ;; Change buffers
     (exwm-input-set-key (kbd "s-b") #'helm-mini)
-    ;; Focusing windows
-    (exwm-input-set-key (kbd "s-h") #'evil-window-left)
-    (exwm-input-set-key (kbd "s-j") #'evil-window-down)
-    (exwm-input-set-key (kbd "s-k") #'evil-window-up)
-    (exwm-input-set-key (kbd "s-l") #'evil-window-right)
-    ;; Moving Windows
-    (exwm-input-set-key (kbd "s-H") #'evil-window-move-far-left)
-    (exwm-input-set-key (kbd "s-J") #'evil-window-move-very-bottom)
-    (exwm-input-set-key (kbd "s-K") #'evil-window-move-very-top)
-    (exwm-input-set-key (kbd "s-L") #'evil-window-move-far-right)
     ;; Resize
     (exwm-input-set-key (kbd "M-s-h") #'spacemacs/shrink-window-horizontally)
     (exwm-input-set-key (kbd "M-s-j") #'spacemacs/shrink-window)
