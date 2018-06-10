@@ -13,12 +13,29 @@
 ;; List of all packages to install and/or initialize. Built-in packages
 ;; which require an initialization must be listed explicitly in the list.
 (setq exwm-packages
-    '(cl-generic
-      (xelb :location (recipe :fetcher github
-                              :repo "ch11ng/xelb")
-            :step pre)
-      (exwm :location (recipe :fetcher github
-                              :repo "ch11ng/exwm"))))
+      '(cl-generic
+        evil
+        (xelb :location (recipe :fetcher github
+                                :repo "ch11ng/xelb")
+              :step pre)
+        (exwm :location (recipe :fetcher github
+                                :repo "ch11ng/exwm")
+              :requires xelb)
+        (exim :location (recipe :fetcher github
+                                :repo "ch11ng/exim")
+              :requires exwm)
+        (exwm-edit :location (recipe :fetcher github
+                                     :repo "agzam/exwm-edit")
+                   :requires exwm)))
+
+(defun exwm/pre-init-evil ()
+  (spacemacs|use-package-add-hook exwm
+    :post-init
+    (add-hook 'exwm-mode-hook 'evil-emacs-state)))
+
+(defun exwm/init-exwm-edit ()
+  (use-package exwm-edit
+    :after exwm))
 
 (defun exwm/init-cl-generic ()
   (use-package cl-generic
@@ -259,3 +276,11 @@ Can show completions at point for COMMAND using helm or ido"
     ;; Do not forget to enable EXWM. It will start by itself when things are ready.
     ;; (exwm-enable)
     ))
+
+(defun exwm/init-exim ()
+  (use-package exim
+    :after exwm
+    :init
+    (add-hook 'exwm-init-hook 'exim-start)
+    :config
+    (push ?\C-\\ exwm-input-prefix-keys)))

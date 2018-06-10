@@ -39,6 +39,7 @@
 
 (setq-default
  browse-url-generic-program "uzbl-browser"
- browse-url-browser-function 'browse-url-generic)
+ browse-url-browser-function 'browse-url-generic
+ default-input-method "TeX")
 
 (defvar evil-want-abbrev-expand-on-insert-exit nil)
