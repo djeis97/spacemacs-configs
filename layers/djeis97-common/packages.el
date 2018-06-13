@@ -82,11 +82,10 @@ Each entry is either:
                 term-color-cyan term-color-white])))
 
 
-(defun djeis97-common/pre-init-ivy ()
-  (spacemacs|use-package-add-hook ivy
-    :post-init
-    (spacemacs/set-leader-keys
-      "aa" 'counsel-linux-app)))
+(defun djeis97-common/post-init-ivy ()
+  (spacemacs/set-leader-keys
+    "aa" 'counsel-linux-app
+    "<f20>" 'counsel-M-x))
 
 (defun djeis97-common/pre-init-engine-mode ()
   (spacemacs|use-package-add-hook engine-mode
