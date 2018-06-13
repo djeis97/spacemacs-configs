@@ -1,0 +1,3 @@
+[submodule "layers/common-lisp-sly"]
+	path = layers/common-lisp-sly
+	url = https://github.com/mfiano/common-lisp-sly
