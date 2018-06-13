@@ -1,2 +1,3 @@
 (configuration-layer/declare-layers
- '(search-engine))
+ '(search-engine
+   exwm))
