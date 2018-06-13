@@ -14,4 +14,4 @@
    djeis97-org
    djeis97-git
    djeis97-uzbl
-   pdf-tools))
+   pdf))
