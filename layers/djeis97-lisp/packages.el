@@ -122,7 +122,7 @@ Each entry is either:
     ;; Temporary hack that disables eldoc for inf-clojure.
     (advice-add 'inf-clojure-eldoc-setup :around #'arcadia-inf-clojure-eldoc-setup-wrapper)))
 
-(defun djeis97/post-init-parinfer ()
+(defun djeis97-lisp/post-init-parinfer ()
   (add-hook 'clojure-mode-hook 'parinfer-mode)
   (add-hook 'inf-clojure-mode-hook 'parinfer-mode))
 
