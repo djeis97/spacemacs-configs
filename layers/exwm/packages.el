@@ -120,11 +120,12 @@
     (add-hook 'exwm-update-title-hook
               (lambda ()
                 (when (string= "Vivaldi-stable" exwm-class-name)
-                  (exwm-workspace-rename-buffer exwm-title))))
+                  (exwm-workspace-rename-buffer (format "%s - Vivaldi Stable" exwm-title)))))
     (add-hook 'exwm-update-title-hook
               (lambda ()
                 (when (string= "Uzbl-core" exwm-class-name)
                   (exwm-workspace-rename-buffer exwm-title))))
+
 
     (defvar exwm-workspace-switch-wrap t
       "Whether `spacemacs/exwm-workspace-next' and `spacemacs/exwm-workspace-prev' should wrap.")
