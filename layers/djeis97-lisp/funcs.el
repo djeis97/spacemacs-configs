@@ -1,5 +1,5 @@
 
-(defun close-paren ()
+(defun djeis97-lisp/close-paren ()
   (interactive)
   (let ((next-line-only-close-parens (save-excursion
                                        (next-line)

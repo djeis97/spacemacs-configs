@@ -10,7 +10,6 @@
                                           (interactive)
                                           (sp-insert-pair "(")
                                           (sp-forward-slurp-sexp '(4))))
-              (define-key map (kbd ")") 'close-paren)
               (define-key map (kbd "RET") (lambda ()
                                             (interactive)
                                             (newline-and-indent)
@@ -18,6 +17,7 @@
                                                 (save-excursion
                                                   (newline-and-indent)))
                                             (indent-according-to-mode)))
+              (define-key map (kbd ")") 'djeis97-lisp/close-paren)
               map)))
 
 (spacemacs/add-to-hooks 'adjust-parens-mode '(lisp-mode-hook emacs-lisp-mode-hook clips-mode-hook))
