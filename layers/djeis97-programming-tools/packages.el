@@ -3,4 +3,4 @@
 
 (defun djeis97-programming-tools/pre-init-company ()
   (spacemacs/add-to-hooks 'djeis97-programming-tools/company-tng-configure-default
-                          '(prog-mode-hook text-mode-hook)))
+                          '(company-mode-hook)))
