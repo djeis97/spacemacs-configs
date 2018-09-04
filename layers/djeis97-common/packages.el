@@ -83,6 +83,7 @@ Each entry is either:
 
 
 (defun djeis97-common/post-init-ivy ()
+  (define-key ivy-minibuffer-map (kbd "<f20>") 'djeis97/ivy-complete-ivy-action)
   (spacemacs/set-leader-keys
     "aa" 'counsel-linux-app
     "<f20>" 'counsel-M-x))

@@ -22,3 +22,9 @@
   (unless gnus-active-hashtb (gnus))
   (browse-url-mail to))
 
+
+(defun djeis97/ivy-complete-ivy-action ()
+  (interactive)
+  (let* ((actions (cdr (ivy-state-action ivy-last)))
+         (action (ido-completing-read "Action:" (mapcar #'third actions))))
+    (ivy-exit-with-action (second (find action actions :key #'third :test #'string=)))))
