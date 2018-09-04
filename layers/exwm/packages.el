@@ -47,6 +47,11 @@
 (defun exwm/init-exwm ()
   (use-package exwm
     :init
+
+    (when (and (configuration-layer/package-used-p 'ivy)
+               (configuration-layer/package-used-p 'persp-mode))
+      (add-hook 'exwm-init-hook 'exwm/add-ivy-persp-advice))
+
     (when exwm-focus-follows-mouse
       (setq mouse-autoselect-window t
             focus-follows-mouse t))

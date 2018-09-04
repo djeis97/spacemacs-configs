@@ -23,3 +23,14 @@
     (funcall orig-fun keymap on-exit foreign-keys)))
 
 (advice-add 'hydra-set-transient-map :around #'exwm-passthrough)
+
+(cl-defun exwm/get-current-persp (orig-fun &optional frame window)
+  (funcall orig-fun
+           (if (eq (or frame (selected-frame)) exwm-workspace--minibuffer)
+               exwm-workspace--current
+             frame)
+           window))
+
+(defun exwm/add-ivy-persp-advice ()
+  (advice-add 'get-current-persp :around #'exwm/get-current-persp))
+
