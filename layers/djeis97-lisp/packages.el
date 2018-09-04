@@ -104,7 +104,11 @@ Each entry is either:
     :defer t
     :commands (adjust-parens-mode
                lisp-indent-adjust-parens
-               lisp-dedent-adjust-parens)))
+               lisp-dedent-adjust-parens)
+    :config
+    (let ((func (lambda (x) (funcall #'company-indent-or-complete-common))))
+      (setq adjust-parens-fallback-indent-function func
+            adjust-parens-fallback-dedent-function func))))
 
 (defun djeis97-lisp/post-init-slime ()
   (setq-default slime-lisp-implementations lisp-implementations)
