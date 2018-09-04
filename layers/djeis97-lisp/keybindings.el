@@ -10,13 +10,13 @@
                                           (interactive)
                                           (sp-insert-pair "(")
                                           (sp-forward-slurp-sexp '(4))))
-              (define-key map (kbd "RET") (lambda ()
-                                            (interactive)
-                                            (newline-and-indent)
-                                            (if (char-equal (char-after (point)) ?\))
-                                                (save-excursion
-                                                  (newline-and-indent)))
-                                            (indent-according-to-mode)))
+              (define-key map [remap newline-and-indent] (lambda ()
+                                                           (interactive)
+                                                           (newline-and-indent)
+                                                           (if (char-equal (char-after (point)) ?\))
+                                                               (save-excursion
+                                                                 (newline-and-indent)))
+                                                           (indent-according-to-mode)))
               (define-key map (kbd ")") 'djeis97-lisp/close-paren)
               map)))
 
