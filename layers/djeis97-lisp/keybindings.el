@@ -3,8 +3,8 @@
   "Bindings to better manage parens."
   :keymap (let ((map (make-sparse-keymap)))
             (when (configuration-layer/package-usedp 'adjust-parens)
-              (define-key map (kbd "<C-tab>") 'lisp-indent-adjust-parens)
-              (define-key map (kbd "<C-iso-lefttab>") 'lisp-dedent-adjust-parens))
+              (define-key map (kbd "<tab>") 'lisp-indent-adjust-parens)
+              (define-key map (kbd "<backtab>") 'lisp-dedent-adjust-parens))
             (when (configuration-layer/package-usedp 'smartparens)
               (define-key map (kbd "(") (lambda ()
                                           (interactive)
