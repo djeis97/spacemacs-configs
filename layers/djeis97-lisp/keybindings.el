@@ -20,4 +20,5 @@
               (define-key map (kbd ")") 'djeis97-lisp/close-paren)
               map)))
 
-(spacemacs/add-to-hooks 'adjust-parens-mode '(lisp-mode-hook emacs-lisp-mode-hook clips-mode-hook))
+(spacemacs/add-to-hooks 'paren-management '(lisp-mode-hook emacs-lisp-mode-hook clips-mode-hook))
+(spacemacs/add-to-hooks 'aggressive-indent-mode '(lisp-mode-hook emacs-lisp-mode-hook))
