@@ -36,7 +36,7 @@
                    :requires smartparens)
     slime
     sly
-    inf-clojure
+    ;; inf-clojure
     parinfer)
   "The list of Lisp packages required by the djeis97-lisp layer.
 

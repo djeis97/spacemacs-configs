@@ -3,7 +3,7 @@
  '(emacs-lisp
    common-lisp-sly
    clips
-   ;; (clojure :variables
-   ;;          clojure-enable-fancify-symbols t)
+   (clojure :variables
+            clojure-enable-fancify-symbols t)
    ;; (parinfer)
    ))
